@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار التنقل المحمول - Quantum Stack</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .test-info {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 212, 255, 0.9);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            z-index: 2000;
+        }
+        
+        .screen-size {
+            display: none;
+        }
+        
+        @media (max-width: 320px) { .screen-320 { display: block; } }
+        @media (min-width: 321px) and (max-width: 375px) { .screen-375 { display: block; } }
+        @media (min-width: 376px) and (max-width: 480px) { .screen-480 { display: block; } }
+        @media (min-width: 481px) and (max-width: 768px) { .screen-768 { display: block; } }
+        @media (min-width: 769px) and (max-width: 1024px) { .screen-1024 { display: block; } }
+        @media (min-width: 1025px) { .screen-desktop { display: block; } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Quantum Stack Logo" class="logo">
+                <span class="logo-text">Quantum Stack</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">اختبار التنقل المحمول</h1>
+                <p class="hero-subtitle">هذه صفحة اختبار للتأكد من عمل التنقل المحمول على جميع الأجهزة</p>
+                <button class="cta-button">اختبر الآن</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Sections -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">قسم الخدمات</h2>
+            <p>هذا قسم اختبار للخدمات</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">قسم من نحن</h2>
+            <p>هذا قسم اختبار لمن نحن</p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">قسم التواصل</h2>
+            <p>هذا قسم اختبار للتواصل</p>
+        </div>
+    </section>
+
+    <!-- Screen Size Indicator -->
+    <div class="test-info">
+        <div class="screen-size screen-320">📱 شاشة صغيرة جداً (≤320px)</div>
+        <div class="screen-size screen-375">📱 هاتف صغير (321-375px)</div>
+        <div class="screen-size screen-480">📱 هاتف متوسط (376-480px)</div>
+        <div class="screen-size screen-768">📱 هاتف كبير/تابلت صغير (481-768px)</div>
+        <div class="screen-size screen-1024">📟 تابلت (769-1024px)</div>
+        <div class="screen-size screen-desktop">💻 سطح المكتب (≥1025px)</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // إضافة معلومات إضافية للاختبار
+        document.addEventListener('DOMContentLoaded', function() {
+            const testInfo = document.querySelector('.test-info');
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            
+            const additionalInfo = document.createElement('div');
+            additionalInfo.innerHTML = `
+                <div>العرض: ${screenWidth}px</div>
+                <div>الارتفاع: ${screenHeight}px</div>
+                <div>النسبة: ${(screenWidth/screenHeight).toFixed(2)}</div>
+            `;
+            testInfo.appendChild(additionalInfo);
+        });
+
+        // اختبار التنقل
+        function testNavigation() {
+            const navMenu = document.querySelector('.nav-menu');
+            const isActive = navMenu.classList.contains('active');
+            console.log('Navigation status:', isActive ? 'مفتوح' : 'مغلق');
+        }
+
+        // اختبار عند تغيير حجم الشاشة
+        window.addEventListener('resize', function() {
+            console.log('تم تغيير حجم الشاشة:', window.innerWidth + 'x' + window.innerHeight);
+        });
+    </script>
+</body>
+</html>

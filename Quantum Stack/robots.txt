@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://quantumstack.com/sitemap.xml
+
+# Disallow specific files (if any)
+Disallow: /EmailJS_Setup_Instructions.md
+Disallow: /favicon-setup.md
+Disallow: /error-fixes.md
+
+# Allow important pages
+Allow: /index.html
+Allow: /services.html
+Allow: /pricing.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /images/
+
+# Crawl delay (optional)
+Crawl-delay: 1

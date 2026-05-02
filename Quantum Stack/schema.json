@@ -1,0 +1,52 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Quantum Stack",
+  "url": "https://quantumstack.com",
+  "logo": "https://quantumstack.com/images/logo.jpg",
+  "description": "Professional web development, mobile apps, and cloud solutions. Expert team delivering innovative technology solutions for businesses worldwide.",
+  "foundingDate": "2020",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cairo",
+    "addressCountry": "Egypt"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+201559923858",
+    "email": "qauntamstack12@gmail.com",
+    "contactType": "Customer Service",
+    "availableLanguage": ["English", "Arabic"]
+  },
+  "sameAs": [
+    "https://www.facebook.com/quantumstack12",
+    "https://www.instagram.com/quantum_stack12"
+  ],
+  "services": [
+    {
+      "@type": "Service",
+      "name": "Web Development",
+      "description": "Custom web applications and responsive websites"
+    },
+    {
+      "@type": "Service", 
+      "name": "Mobile App Development",
+      "description": "iOS and Android mobile applications"
+    },
+    {
+      "@type": "Service",
+      "name": "Cloud Solutions",
+      "description": "Cloud deployment and infrastructure management"
+    },
+    {
+      "@type": "Service",
+      "name": "UI/UX Design",
+      "description": "User interface and experience design"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "50"
+  }
+}
